@@ -10,9 +10,10 @@ import UIKit
 
 class HouseCollectionViewCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    static let reuseIdentifier = String(describing: self)
+    
+    // MARK: - outlets
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
 
 }

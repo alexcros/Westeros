@@ -17,26 +17,50 @@ final class Person {
     
     var alias: String {
         get {
-//            if let _alias = _alias {
-//                // Existe y esta guardado dentro de alias
-//                return _alias
-//            } else {
-//                return ""
-//            }
             return _alias ?? "" // modern ternary operator
         }
     }
     
     // MARK: - Initialization
-    init(name: String, alias: String, house: House) {
+    init(name: String, alias: String? = nil, house: House) {
         self.name = name
         _alias = alias
         self.house = house
     }
     
-    init(name: String, house: House) {
-        self.name = name
-        self.house = house
-        _alias = nil
+}
+
+extension Person {
+    var fullName: String {
+        return "\(name) \(house.name)"
     }
+}
+
+extension Person {
+    var proxyForEquality: String {
+        return "\(name)\(alias)\(house.name)"
+    }
+    
+    var proxyForComparison: String {
+        return fullName.lowercased()
+    }
+}
+
+extension Person: Hashable {
+    var hashValue: Int {
+        return proxyForEquality.hashValue
+    }
+}
+
+extension Person: Equatable {
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxyForEquality == rhs.proxyForEquality
+    }
+}
+
+extension Person: Comparable {
+    static func < (lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
+    }
+    
 }

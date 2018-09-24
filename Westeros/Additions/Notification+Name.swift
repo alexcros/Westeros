@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+extension Notification.Name {
+
+    static let houseDidChangeNotification = Notification.Name(Constants.HouseDidChangeNotificationName)
+}

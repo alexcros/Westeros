@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum Constants {
+   static let HouseDidChangeNotificationName = "HouseDidChange"
+   static let HouseKey = "HouseKey"
+   static let lastHouseKey = "lastHouseKey"
+}
+
+
