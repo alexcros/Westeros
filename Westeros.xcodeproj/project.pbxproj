@@ -40,6 +40,8 @@
 		ACF7B090215956FD004E12CE /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B08F215956FD004E12CE /* Season.swift */; };
 		ACF7B0922159584E004E12CE /* SeasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B0912159584E004E12CE /* SeasonTests.swift */; };
 		ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09321595AA2004E12CE /* Date+String.swift */; };
+		ACF7B09621595F54004E12CE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09521595F54004E12CE /* Episode.swift */; };
+		ACF7B09821597111004E12CE /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09721597111004E12CE /* EpisodeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,8 @@
 		ACF7B08F215956FD004E12CE /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		ACF7B0912159584E004E12CE /* SeasonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTests.swift; sourceTree = "<group>"; };
 		ACF7B09321595AA2004E12CE /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		ACF7B09521595F54004E12CE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		ACF7B09721597111004E12CE /* EpisodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,7 @@
 				AC68E2C62141C8C800745879 /* PersonTests.swift */,
 				AC68E2D92149BC0800745879 /* RepositoryTests.swift */,
 				ACF7B0912159584E004E12CE /* SeasonTests.swift */,
+				ACF7B09721597111004E12CE /* EpisodeTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				AC68E2C42141C1E000745879 /* Sigil.swift */,
 				AC68E2C82141C90600745879 /* Person.swift */,
 				ACF7B08F215956FD004E12CE /* Season.swift */,
+				ACF7B09521595F54004E12CE /* Episode.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				AC68E2D42149A32200745879 /* HouseDetailViewController.swift in Sources */,
 				AC68E2C52141C1E000745879 /* Sigil.swift in Sources */,
 				AC68E2FB2152EE9900745879 /* HouseCollectionViewController.swift in Sources */,
+				ACF7B09621595F54004E12CE /* Episode.swift in Sources */,
 				AC68E2EE2152DAC000745879 /* Notification+Name.swift in Sources */,
 				ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */,
 				AC68E2FF2152F2E400745879 /* HouseCollectionViewCell.swift in Sources */,
@@ -371,6 +378,7 @@
 				ACF7B0922159584E004E12CE /* SeasonTests.swift in Sources */,
 				AC68E2C02141BBE300745879 /* HouseTests.swift in Sources */,
 				AC68E2C72141C8C800745879 /* PersonTests.swift in Sources */,
+				ACF7B09821597111004E12CE /* EpisodeTests.swift in Sources */,
 				AC68E2DA2149BC0800745879 /* RepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
