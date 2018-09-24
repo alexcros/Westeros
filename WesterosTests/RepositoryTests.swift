@@ -1,15 +1,14 @@
 //
-//  WesterosTests.swift
+//  RepositoryTests.swift
 //  WesterosTests
 //
-//  Created by Alexandre on 6/9/18.
+//  Created by Alexandre on 12/9/18.
 //  Copyright © 2018 Alexandre. All rights reserved.
 //
 
 import XCTest
-@testable import Westeros
 
-class WesterosTests: XCTestCase {
+class RepositoryTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
