@@ -37,6 +37,9 @@
 		AC68E2FC2152EE9900745879 /* HouseCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC68E2FA2152EE9900745879 /* HouseCollectionViewController.xib */; };
 		AC68E2FF2152F2E400745879 /* HouseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68E2FD2152F2E400745879 /* HouseCollectionViewCell.swift */; };
 		AC68E3002152F2E400745879 /* HouseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC68E2FE2152F2E400745879 /* HouseCollectionViewCell.xib */; };
+		ACF7B090215956FD004E12CE /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B08F215956FD004E12CE /* Season.swift */; };
+		ACF7B0922159584E004E12CE /* SeasonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B0912159584E004E12CE /* SeasonTests.swift */; };
+		ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09321595AA2004E12CE /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		AC68E2FA2152EE9900745879 /* HouseCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseCollectionViewController.xib; sourceTree = "<group>"; };
 		AC68E2FD2152F2E400745879 /* HouseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC68E2FE2152F2E400745879 /* HouseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseCollectionViewCell.xib; sourceTree = "<group>"; };
+		ACF7B08F215956FD004E12CE /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		ACF7B0912159584E004E12CE /* SeasonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTests.swift; sourceTree = "<group>"; };
+		ACF7B09321595AA2004E12CE /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 				AC68E2BF2141BBE300745879 /* HouseTests.swift */,
 				AC68E2C62141C8C800745879 /* PersonTests.swift */,
 				AC68E2D92149BC0800745879 /* RepositoryTests.swift */,
+				ACF7B0912159584E004E12CE /* SeasonTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -157,6 +164,7 @@
 				AC68E2C22141BD9800745879 /* House.swift */,
 				AC68E2C42141C1E000745879 /* Sigil.swift */,
 				AC68E2C82141C90600745879 /* Person.swift */,
+				ACF7B08F215956FD004E12CE /* Season.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -192,6 +200,7 @@
 			children = (
 				AC68E2D72149B9F200745879 /* UIViewController+Navigation.swift */,
 				AC68E2ED2152DAC000745879 /* Notification+Name.swift */,
+				ACF7B09321595AA2004E12CE /* Date+String.swift */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF7B090215956FD004E12CE /* Season.swift in Sources */,
 				AC68E2DD2149BCC500745879 /* Repository.swift in Sources */,
 				AC68E2EC2151A8B500745879 /* Constants.swift in Sources */,
 				AC68E2D82149B9F200745879 /* UIViewController+Navigation.swift in Sources */,
@@ -342,6 +352,7 @@
 				AC68E2C52141C1E000745879 /* Sigil.swift in Sources */,
 				AC68E2FB2152EE9900745879 /* HouseCollectionViewController.swift in Sources */,
 				AC68E2EE2152DAC000745879 /* Notification+Name.swift in Sources */,
+				ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */,
 				AC68E2FF2152F2E400745879 /* HouseCollectionViewCell.swift in Sources */,
 				AC68E2E9215189AF00745879 /* MemberListViewController.swift in Sources */,
 				AC68E2F22152DF3D00745879 /* HouseCell.swift in Sources */,
@@ -357,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF7B0922159584E004E12CE /* SeasonTests.swift in Sources */,
 				AC68E2C02141BBE300745879 /* HouseTests.swift in Sources */,
 				AC68E2C72141C8C800745879 /* PersonTests.swift in Sources */,
 				AC68E2DA2149BC0800745879 /* RepositoryTests.swift in Sources */,
