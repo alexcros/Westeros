@@ -8,8 +8,7 @@
 
 import Foundation
 
-//typealias Chapters = Set<Episodes>
-typealias Chapters = String
+typealias Chapters = Set<Episode>
 
 final class Season {
     
@@ -33,6 +32,20 @@ extension Season {
     var count: Int {
         return _chapters.count
     }
+    
+    func add(episode: Episode) {
+        // Check correct episode in Season
+        guard self == episode.season else {
+            return
+        }
+        
+        _chapters.insert(episode)
+    }
+    
+    func added(episodes: [Episode]) {
+        episodes.forEach { add(episode: $0)}
+    }
+    
 }
 
 // MARK: - Proxy

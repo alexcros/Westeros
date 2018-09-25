@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Model
         let houses = Repository.local.houses
-        
+        let seasons = Repository.local.seasons
+
         // Controllers
         // Master
         let houseListVC = HouseListTableViewController(model: houses)

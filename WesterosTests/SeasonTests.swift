@@ -41,7 +41,7 @@ class SeasonTests: XCTestCase {
         XCTAssertNotNil(season.hashValue)
     }
     
-    func testSeasonComparison() { // sorted
+    func testSeasonComparison() {
         XCTAssertLessThan(season, season2)
     }
     
