@@ -42,6 +42,17 @@
 		ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09321595AA2004E12CE /* Date+String.swift */; };
 		ACF7B09621595F54004E12CE /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09521595F54004E12CE /* Episode.swift */; };
 		ACF7B09821597111004E12CE /* EpisodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF7B09721597111004E12CE /* EpisodeTests.swift */; };
+		ACF9C4F0215A561D0055C6F2 /* SeasonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C4EE215A561D0055C6F2 /* SeasonListViewController.swift */; };
+		ACF9C4F1215A561D0055C6F2 /* SeasonListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF9C4EF215A561D0055C6F2 /* SeasonListViewController.xib */; };
+		ACF9C4F4215A56380055C6F2 /* SeasonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C4F2215A56380055C6F2 /* SeasonDetailViewController.swift */; };
+		ACF9C4F5215A56380055C6F2 /* SeasonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF9C4F3215A56380055C6F2 /* SeasonDetailViewController.xib */; };
+		ACF9C4F8215A5F880055C6F2 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C4F6215A5F880055C6F2 /* EpisodeListViewController.swift */; };
+		ACF9C4F9215A5F880055C6F2 /* EpisodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF9C4F7215A5F880055C6F2 /* EpisodeListViewController.xib */; };
+		ACF9C4FC215A641A0055C6F2 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C4FA215A641A0055C6F2 /* EpisodeDetailViewController.swift */; };
+		ACF9C4FD215A641A0055C6F2 /* EpisodeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF9C4FB215A641A0055C6F2 /* EpisodeDetailViewController.xib */; };
+		ACF9C4FF215B8E420055C6F2 /* HouseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C4FE215B8E420055C6F2 /* HouseType.swift */; };
+		ACF9C502215B951F0055C6F2 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF9C500215B951F0055C6F2 /* MemberDetailViewController.swift */; };
+		ACF9C503215B951F0055C6F2 /* MemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF9C501215B951F0055C6F2 /* MemberDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +105,17 @@
 		ACF7B09321595AA2004E12CE /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		ACF7B09521595F54004E12CE /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		ACF7B09721597111004E12CE /* EpisodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTests.swift; sourceTree = "<group>"; };
+		ACF9C4EE215A561D0055C6F2 /* SeasonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonListViewController.swift; sourceTree = "<group>"; };
+		ACF9C4EF215A561D0055C6F2 /* SeasonListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonListViewController.xib; sourceTree = "<group>"; };
+		ACF9C4F2215A56380055C6F2 /* SeasonDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonDetailViewController.swift; sourceTree = "<group>"; };
+		ACF9C4F3215A56380055C6F2 /* SeasonDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonDetailViewController.xib; sourceTree = "<group>"; };
+		ACF9C4F6215A5F880055C6F2 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		ACF9C4F7215A5F880055C6F2 /* EpisodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListViewController.xib; sourceTree = "<group>"; };
+		ACF9C4FA215A641A0055C6F2 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		ACF9C4FB215A641A0055C6F2 /* EpisodeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailViewController.xib; sourceTree = "<group>"; };
+		ACF9C4FE215B8E420055C6F2 /* HouseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseType.swift; sourceTree = "<group>"; };
+		ACF9C500215B951F0055C6F2 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		ACF9C501215B951F0055C6F2 /* MemberDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				AC68E2EB2151A8B500745879 /* Constants.swift */,
+				ACF9C4FE215B8E420055C6F2 /* HouseType.swift */,
 				AC68E2D62149B9A500745879 /* Additions */,
 				AC68E2EF2152DF0200745879 /* Views */,
 				AC68E2D12149A2A100745879 /* Controllers */,
@@ -197,6 +220,16 @@
 				AC68E2E02150336D00745879 /* WikiViewController.xib */,
 				AC68E2E7215189AF00745879 /* MemberListViewController.swift */,
 				AC68E2E8215189AF00745879 /* MemberListViewController.xib */,
+				ACF9C500215B951F0055C6F2 /* MemberDetailViewController.swift */,
+				ACF9C501215B951F0055C6F2 /* MemberDetailViewController.xib */,
+				ACF9C4EE215A561D0055C6F2 /* SeasonListViewController.swift */,
+				ACF9C4EF215A561D0055C6F2 /* SeasonListViewController.xib */,
+				ACF9C4F2215A56380055C6F2 /* SeasonDetailViewController.swift */,
+				ACF9C4F3215A56380055C6F2 /* SeasonDetailViewController.xib */,
+				ACF9C4F6215A5F880055C6F2 /* EpisodeListViewController.swift */,
+				ACF9C4F7215A5F880055C6F2 /* EpisodeListViewController.xib */,
+				ACF9C4FA215A641A0055C6F2 /* EpisodeDetailViewController.swift */,
+				ACF9C4FB215A641A0055C6F2 /* EpisodeDetailViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +354,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACF9C503215B951F0055C6F2 /* MemberDetailViewController.xib in Resources */,
+				ACF9C4F5215A56380055C6F2 /* SeasonDetailViewController.xib in Resources */,
 				AC68E2E6215059DA00745879 /* HouseListTableViewController.xib in Resources */,
 				AC68E2CD2149A19F00745879 /* lannister.jpg in Resources */,
 				AC68E2F32152DF3D00745879 /* HouseCell.xib in Resources */,
@@ -329,8 +364,11 @@
 				AC68E2AA2141B36E00745879 /* LaunchScreen.storyboard in Resources */,
 				AC68E2EA215189AF00745879 /* MemberListViewController.xib in Resources */,
 				AC68E3002152F2E400745879 /* HouseCollectionViewCell.xib in Resources */,
+				ACF9C4F1215A561D0055C6F2 /* SeasonListViewController.xib in Resources */,
 				AC68E2D52149A32200745879 /* HouseDetailViewController.xib in Resources */,
+				ACF9C4FD215A641A0055C6F2 /* EpisodeDetailViewController.xib in Resources */,
 				AC68E2A72141B36E00745879 /* Assets.xcassets in Resources */,
+				ACF9C4F9215A5F880055C6F2 /* EpisodeListViewController.xib in Resources */,
 				AC68E2CF2149A19F00745879 /* codeIsComing.png in Resources */,
 				AC68E2CE2149A19F00745879 /* targaryenSmall.jpg in Resources */,
 			);
@@ -355,14 +393,20 @@
 				AC68E2EC2151A8B500745879 /* Constants.swift in Sources */,
 				AC68E2D82149B9F200745879 /* UIViewController+Navigation.swift in Sources */,
 				AC68E2D42149A32200745879 /* HouseDetailViewController.swift in Sources */,
+				ACF9C4F0215A561D0055C6F2 /* SeasonListViewController.swift in Sources */,
 				AC68E2C52141C1E000745879 /* Sigil.swift in Sources */,
 				AC68E2FB2152EE9900745879 /* HouseCollectionViewController.swift in Sources */,
+				ACF9C4FF215B8E420055C6F2 /* HouseType.swift in Sources */,
+				ACF9C4F4215A56380055C6F2 /* SeasonDetailViewController.swift in Sources */,
+				ACF9C502215B951F0055C6F2 /* MemberDetailViewController.swift in Sources */,
 				ACF7B09621595F54004E12CE /* Episode.swift in Sources */,
 				AC68E2EE2152DAC000745879 /* Notification+Name.swift in Sources */,
 				ACF7B09421595AA2004E12CE /* Date+String.swift in Sources */,
 				AC68E2FF2152F2E400745879 /* HouseCollectionViewCell.swift in Sources */,
 				AC68E2E9215189AF00745879 /* MemberListViewController.swift in Sources */,
 				AC68E2F22152DF3D00745879 /* HouseCell.swift in Sources */,
+				ACF9C4FC215A641A0055C6F2 /* EpisodeDetailViewController.swift in Sources */,
+				ACF9C4F8215A5F880055C6F2 /* EpisodeListViewController.swift in Sources */,
 				AC68E2C32141BD9800745879 /* House.swift in Sources */,
 				AC68E2E5215059DA00745879 /* HouseListTableViewController.swift in Sources */,
 				AC68E2A02141B36A00745879 /* AppDelegate.swift in Sources */,
