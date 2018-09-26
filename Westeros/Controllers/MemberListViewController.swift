@@ -59,3 +59,13 @@ extension MemberListViewController: UITableViewDataSource {
     }
     
 }
+
+extension MemberListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = model[indexPath.row]
+        
+        let memberDetailViewController = MemberDetailViewController(model: person)
+        
+        navigationController?.pushViewController(memberDetailViewController, animated: true)
+    }
+}

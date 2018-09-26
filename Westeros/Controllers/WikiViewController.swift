@@ -34,7 +34,7 @@ class WikiViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Update house changes
+        // Observer house notification changes
         NotificationCenter.default.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil)
         
     }
@@ -54,12 +54,11 @@ class WikiViewController: UIViewController {
     // MARK: Notifications
     @objc func houseDidChange(notification: Notification) {
         // get house info
-        guard let info = notification.userInfo,
-            let house = info[Constants.HouseKey] as? House else { return }
-        
-        // update house
-        self.model = house
-        
+        let info = notification.userInfo!
+
+        let house = info[Constants.HouseKey] as? House
+
+        model = house!
         syncModelWithView()
         
     }
