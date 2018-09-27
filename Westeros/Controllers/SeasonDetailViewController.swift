@@ -10,8 +10,12 @@ import UIKit
 
 class SeasonDetailViewController: UIViewController {
     
+    // MARK: - Outlets
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var broadcastLabel: UILabel!
+    
     // MARK: - Properties
-    let model: Season!
+    var model: Season
     
     // MARK: - Initialization
     init(model: Season) {
@@ -19,7 +23,7 @@ class SeasonDetailViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        title = model.name
+        title = "Season"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -29,11 +33,25 @@ class SeasonDetailViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+
+        syncModelWithView()
     }
-    
-    
-    
-    
+
+    // MARK: - Sync
+    func syncModelWithView() {
+        title = "SeasonDetail"
+        nameLabel.text = model.name
+        broadcastLabel.text = "\(model.releaseDate)"
+
+        // outlets
+    }
+
+}
+
+// MARK: - SeasonListViewControllerDelegate
+extension SeasonDetailViewController: SeasonListViewControllerDelegate {
+    func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season) {
+        model = season
+        syncModelWithView()
+    }
 }

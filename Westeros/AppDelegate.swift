@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         houseListNav = houseListVC.wrappedInNavigation()
         seasonListNav = seasonListViewController.wrappedInNavigation()
         houseDetailNavigation = houseDetailViewController.wrappedInNavigation()
+        
         seasonDetailNavigation = seasonDetailViewController.wrappedInNavigation()
         
         // Extra
@@ -54,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.viewControllers = [houseListNav, seasonListNav]
         tabBarController.delegate = self
         
-        splitVC.viewControllers = [tabBarController, houseDetailNavigation, seasonDetailNavigation] as! [UIViewController]
+        splitVC.viewControllers = [tabBarController, houseDetailNavigation, seasonDetailNavigation]
         
         tabBarController.title = "Westeros"
         
