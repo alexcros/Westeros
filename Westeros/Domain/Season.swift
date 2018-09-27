@@ -8,29 +8,34 @@
 
 import Foundation
 
-typealias Chapters = Set<Episode>
+typealias Episodes = Set<Episode>
 
 final class Season {
     
+    // MARK: - Properties
     let name: String
     let releaseDate: Date
+    private var _episodes: Episodes
     
-    private var _chapters: Chapters
-    
+    // MARK: - Initialization
     init(name: String, releaseDate: Date) {
 
         self.name = name
         
         self.releaseDate = releaseDate
         
-        _chapters = Chapters()
+        _episodes = Episodes()
     }
     
 }
 
 extension Season {
     var count: Int {
-        return _chapters.count
+        return _episodes.count
+    }
+    
+    var sortedEpisodes: [Episode] {
+        return _episodes.sorted()
     }
     
     func add(episode: Episode) {
@@ -39,7 +44,7 @@ extension Season {
             return
         }
         
-        _chapters.insert(episode)
+        _episodes.insert(episode)
     }
     
     func added(episodes: [Episode]) {

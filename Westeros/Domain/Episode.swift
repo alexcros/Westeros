@@ -11,7 +11,7 @@ import Foundation
 final class Episode {
     let name: String
     let broadcastDate: Date
-    let season : Season
+    weak var season : Season?
     
     init(name: String, broadcastDate: Date, season: Season) {
         self.name = name
@@ -22,7 +22,7 @@ final class Episode {
 
 extension Episode {
     var fullName: String {
-         return "\(name)\(season.name)"
+        return "\(name)\(season?.name)"
     }
 }
 

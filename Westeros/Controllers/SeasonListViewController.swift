@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol SeasonListViewControllerDelegate {
+    
+    func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season)
+    
+}
+
 class SeasonListViewController: UIViewController {
     
     // MARK: - Outlets
@@ -15,6 +21,7 @@ class SeasonListViewController: UIViewController {
     
     // MARK: - Properties
     let model: [Season]
+    var delegate: SeasonListViewControllerDelegate?
     
     // MARK: - Initialization
     init(model: [Season]) {
@@ -36,7 +43,7 @@ class SeasonListViewController: UIViewController {
         seasonTableView.dataSource = self
         seasonTableView.delegate = self
     }
-
+    
 }
 
 extension SeasonListViewController: UITableViewDataSource {
@@ -67,8 +74,23 @@ extension SeasonListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let season = model[indexPath.row]
         
-        let seasonDetaiViewController = SeasonDetailViewController(model: season)
+        delegate?.seasonListViewController(self, didSelectSeason: season)
         
-        navigationController?.pushViewController(seasonDetaiViewController, animated: true)
+        let nc = NotificationCenter.default
+        // TODO:
+        let notification = Notification(name: Notification.Name(Constants.SeasonDidChangeNotificationName),
+                                        object: self,
+                                        userInfo: [Constants.SeasonKey : season])
+        
+        nc.post(notification)
+        
+    }
+}
+
+// MARK: - SeasonListViewControllerDelegate
+extension SeasonListViewController: SeasonListViewControllerDelegate {
+    func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season) {
+        let seasonDetailViewController = SeasonDetailViewController(model: season)
+        navigationController?.pushViewController(seasonDetailViewController, animated: true)
     }
 }
