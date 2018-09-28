@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeDetailViewController" customModule="Westeros" customModuleProvider="target">
             <connections>
+                <outlet property="broadcastLabel" destination="KlY-sD-anJ" id="FNX-he-qUp"/>
+                <outlet property="detailLabel" destination="pxa-Ur-4d7" id="iSw-Qy-e0Z"/>
+                <outlet property="nameLabel" destination="stb-Uq-JBD" id="xQg-fh-T6M"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,8 +21,40 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stb-Uq-JBD">
+                    <rect key="frame" x="16" y="20" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlY-sD-anJ">
+                    <rect key="frame" x="16" y="49" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxa-Ur-4d7">
+                    <rect key="frame" x="16" y="78" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="stb-Uq-JBD" firstAttribute="leading" secondItem="KlY-sD-anJ" secondAttribute="leading" id="1bC-Lm-zTl"/>
+                <constraint firstItem="stb-Uq-JBD" firstAttribute="trailing" secondItem="KlY-sD-anJ" secondAttribute="trailing" id="6IO-w9-UAx"/>
+                <constraint firstItem="KlY-sD-anJ" firstAttribute="leading" secondItem="pxa-Ur-4d7" secondAttribute="leading" id="8e6-cb-t1f"/>
+                <constraint firstItem="KlY-sD-anJ" firstAttribute="trailing" secondItem="pxa-Ur-4d7" secondAttribute="trailing" id="mJp-4U-O2F"/>
+                <constraint firstItem="stb-Uq-JBD" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="poc-SD-eRv"/>
+                <constraint firstItem="stb-Uq-JBD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ryd-2b-zPw"/>
+                <constraint firstItem="stb-Uq-JBD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="uiB-hs-tEe"/>
+                <constraint firstItem="KlY-sD-anJ" firstAttribute="top" secondItem="stb-Uq-JBD" secondAttribute="bottom" constant="8" symbolic="YES" id="upP-bX-sa4"/>
+                <constraint firstItem="pxa-Ur-4d7" firstAttribute="top" secondItem="KlY-sD-anJ" secondAttribute="bottom" constant="8" symbolic="YES" id="zfg-gd-Us2"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="40.799999999999997" y="46.326836581709152"/>
         </view>
     </objects>
 </document>
