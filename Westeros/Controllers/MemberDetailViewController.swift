@@ -46,6 +46,7 @@ class MemberDetailViewController: UIViewController {
 
     // MARK: - Sync
     func syncViewWithModel() {
+        title = model.name
         memberNameLabel.text = model.fullName
         memberAliasLabel.text = model.alias
     }
