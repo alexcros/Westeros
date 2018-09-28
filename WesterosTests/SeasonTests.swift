@@ -16,8 +16,15 @@ class SeasonTests: XCTestCase {
     let season = Season(name: "Season 1", releaseDate: Date.init(dateString: "2000-01-01"))
     let season2 = Season(name: "Season 2", releaseDate: Date.init(dateString: "2000-01-01"))
     
+//    var localSeasons = [Season]()
+//    localSeasons.append(season2)
+//    localSeasons.append(season1)
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+//        localSeasons.append(season1)
+        
     }
 
     override func tearDown() {

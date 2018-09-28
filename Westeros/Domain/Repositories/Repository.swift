@@ -16,19 +16,45 @@ final class Repository {
 // MARK: - HouseFactory
 protocol HouseFactory {
     typealias Filter = (House) -> Bool
-    typealias FilterSeason = (Season) -> Bool
     
     var houses: [House] { get }
-    var seasons: [Season] { get }
     
     func house(named: String) -> House?
-    func season(named: String) -> Season?
+    
+    func house(named name: HouseType) -> House?
     
     func houses(filteredBy filter: Filter) -> [House]
-    func seasons(filteredBy filter: FilterSeason) -> [Season]
+    
 }
 
-final class LocalFactory: HouseFactory {
+// MARK: - SeasonFactory
+
+protocol SeasonFactory {
+    typealias FilterSeason = (Season) -> Bool
+    
+    var seasons: [Season] { get }
+    
+    func season(named: String) -> Season?
+    
+    func seasons(filtered filter: FilterSeason) -> [Season]
+}
+
+final class LocalFactory: HouseFactory, SeasonFactory {
+    
+    var episodes : [Episode] {
+     
+        var allEpisodes = [Episode]()
+        
+        allEpisodes.append(Episode(name: "Episode 1",
+                                broadcastDate: Date.init(dateString:"2011-04-11"),
+                                season: Season(name: "Season 1", releaseDate: Date.init(dateString:"2011-04-11"))))
+        
+        allEpisodes.append(Episode(name: "Episode 2",
+                                broadcastDate: Date.init(dateString:"2011-04-11"),
+                                season: Season(name: "Season 1", releaseDate: Date.init(dateString:"2011-04-11"))))
+        
+        return allEpisodes
+    }
     
     var seasons: [Season] {
         
@@ -98,14 +124,15 @@ final class LocalFactory: HouseFactory {
         }
         
         return allSeasons.sorted()
+        
     }
     
     func season(named name: String) -> Season? {
         return seasons.first { $0.name.lowercased() == name.lowercased() }
     }
     
-    func seasons(filteredBy: FilterSeason) -> [Season] {   
-        return seasons.filter(filteredBy)
+    func seasons(filtered: FilterSeason) -> [Season] {
+        return seasons.filter(filtered)
     }
     
     var houses : [House] {
@@ -148,6 +175,10 @@ final class LocalFactory: HouseFactory {
     
     func house(named name: String) -> House? {
         return houses.first { $0.name.uppercased() == name.uppercased() }
+    }
+    
+    func house(named name: HouseType) -> House? {
+        return house(named: name.rawValue)
     }
     
     func houses(filteredBy: Filter) -> [House] {
