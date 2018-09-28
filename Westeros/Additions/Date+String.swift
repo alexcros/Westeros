@@ -12,8 +12,10 @@ extension Date {
 
     init(dateString: String) {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es_ES")
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.locale = Locale(identifier: "es_ES_PREEURO")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
         let d = dateFormatter.date(from: dateString)!
         self.init(timeInterval: 0, since: d)
         

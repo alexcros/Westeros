@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Model
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
-        let episodes = Repository.local.episodes
+        //_ = Repository.local.episodes
         
         // OLD INTERFACE
         // Controllers
