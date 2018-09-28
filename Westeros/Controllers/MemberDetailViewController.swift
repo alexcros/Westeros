@@ -16,7 +16,7 @@ class MemberDetailViewController: UIViewController {
     @IBOutlet var memberAliasLabel: UILabel!
     
     // MARK: - Properties
-    let model: Person!
+    var model: Person!
     
     // MARK: - Initialization
     init(model: Person) {
@@ -38,6 +38,11 @@ class MemberDetailViewController: UIViewController {
 
         syncViewWithModel()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Observe season notification changes
+        NotificationCenter.default.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil)
+    }
 
     // MARK: - Sync
     func syncViewWithModel() {
@@ -45,6 +50,17 @@ class MemberDetailViewController: UIViewController {
         memberAliasLabel.text = model.alias
     }
 
-
+    // MARK: Notifications
+    @objc func houseDidChange(notification: Notification) {
+        
+        // get house info
+        let info = notification.userInfo!
+        
+        let house = info[Constants.HouseKey] as? House
+        
+        model = house?.sortedMembers.first
+        syncViewWithModel()
+        
+    }
 
 }
