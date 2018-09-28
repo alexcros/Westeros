@@ -67,7 +67,7 @@ extension EpisodeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let episodes = model[indexPath.row].season?.sortedEpisodes
         
-        let episodeDetaiViewController = EpisodeDetailViewController(model: episodes!)
+        let episodeDetaiViewController = EpisodeDetailViewController(model: (episodes?.first)!)
         
         navigationController?.pushViewController(episodeDetaiViewController, animated: true)
     }

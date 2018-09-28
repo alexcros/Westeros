@@ -12,6 +12,8 @@ import WebKit
 class WikiViewController: UIViewController {
     
     // MARK: - Outlets
+    
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -31,16 +33,13 @@ class WikiViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Life Cycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Observer house notification changes
+        // Observe houseVC notification changes
         NotificationCenter.default.addObserver(self, selector: #selector(houseDidChange), name: .houseDidChangeNotification, object: nil)
         
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
     }
     
     override func viewDidLoad() {

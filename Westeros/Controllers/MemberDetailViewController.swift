@@ -10,6 +10,11 @@ import UIKit
 
 class MemberDetailViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet var memberNameLabel: UILabel!
+    
+    @IBOutlet var memberAliasLabel: UILabel!
+    
     // MARK: - Properties
     let model: Person!
     
@@ -31,9 +36,14 @@ class MemberDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        syncViewWithModel()
     }
 
+    // MARK: - Sync
+    func syncViewWithModel() {
+        memberNameLabel.text = model.fullName
+        memberAliasLabel.text = model.alias
+    }
 
 
 

@@ -21,22 +21,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-Ta-hhE">
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVz-Ta-hhE">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lxs-c8-Jfq">
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Lxs-c8-Jfq">
                     <rect key="frame" x="169" y="315" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Lxs-c8-Jfq" firstAttribute="centerY" secondItem="aVz-Ta-hhE" secondAttribute="centerY" id="5Mh-sX-GJ9"/>
+                <constraint firstItem="aVz-Ta-hhE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="C15-ep-X6j"/>
+                <constraint firstItem="aVz-Ta-hhE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FVs-y6-KNl"/>
+                <constraint firstItem="aVz-Ta-hhE" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="FW5-Ca-IhC"/>
+                <constraint firstItem="aVz-Ta-hhE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PpC-b7-41y"/>
+                <constraint firstItem="Lxs-c8-Jfq" firstAttribute="centerX" secondItem="aVz-Ta-hhE" secondAttribute="centerX" id="emO-ii-kE9"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="154.27286356821591"/>
         </view>

@@ -76,7 +76,7 @@ class HouseListTableViewController: UITableViewController {
     
     // MARK: - Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 130
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

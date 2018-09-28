@@ -13,6 +13,8 @@ class SeasonDetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var broadcastLabel: UILabel!
+    @IBOutlet weak var episodesLabel: UILabel!
+    @IBOutlet var episodesTableView: UITableView!
     
     // MARK: - Properties
     var model: Season
@@ -34,18 +36,60 @@ class SeasonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        episodesTableView.dataSource = self
+        episodesTableView.delegate = self
+        
         syncModelWithView()
     }
 
     // MARK: - Sync
     func syncModelWithView() {
-        title = "SeasonDetail"
+        title = model.name
         nameLabel.text = model.name
         broadcastLabel.text = "\(model.releaseDate)"
-
+        episodesLabel.text = "Episodes List"
         // outlets
     }
+    
+    
 
+}
+
+extension SeasonDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return model.sortedEpisodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellId = "EpisodeCell"
+        
+        let episode = model.sortedEpisodes[indexPath.row]
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellId)
+        }
+        
+        cell?.textLabel?.text = episode.name
+        cell?.detailTextLabel?.text = "\(episode.broadcastDate)"
+        
+        
+        return cell!
+    }
+}
+
+extension SeasonDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = model.sortedEpisodes[indexPath.row]
+        
+        let episodeDetailViewController = EpisodeDetailViewController(model: episode)
+        
+        navigationController?.pushViewController(episodeDetailViewController, animated: true)
+    }
+    
 }
 
 // MARK: - SeasonListViewControllerDelegate

@@ -14,13 +14,15 @@ class MemberListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Properties
-    let model: [Person]
+    var model: [Person]
     
     // MARK: - Initialization
     init(model: [Person]) {
         self.model = model
         
         super.init(nibName: nil, bundle: nil)
+        
+        title = "Members"
         
     }
     
@@ -29,11 +31,46 @@ class MemberListViewController: UIViewController {
     }
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Observe houseVC notification changes
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(houseDidChange), name: .houseDidChangeNotification
+            , object: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
+    
+    // MARK: Notifications
+    @objc func houseDidChange(notification: Notification) {
+        // get house info
+        let info = notification.userInfo!
+        
+        let house = info[Constants.HouseKey] as? House
+        
+        let members = house?.sortedMembers
+        
+        model = members!
+        
+        syncViewWithModel()
+        
+    }
+    
+    // MARK: - Sync
+    func syncViewWithModel() {
+        //        title = mode
+        //title = model.description
+        tableView.reloadData()
+    }
+    
+    
 }
 
 extension MemberListViewController: UITableViewDataSource {
