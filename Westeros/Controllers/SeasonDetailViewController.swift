@@ -48,7 +48,6 @@ class SeasonDetailViewController: UIViewController {
         nameLabel.text = model.name
         broadcastLabel.text = "\(model.releaseDate)"
         episodesLabel.text = "Episodes List"
-        // outlets
     }
     
     

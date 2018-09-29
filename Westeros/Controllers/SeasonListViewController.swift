@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-protocol SeasonListViewControllerDelegate {
+//class: guarantee that this protocol will be used only on classes and no other stuff like enums or structs.
+protocol SeasonListViewControllerDelegate: class {
     
     func seasonListViewController(_ vc: SeasonListViewController, didSelectSeason season: Season)
     
@@ -21,7 +21,7 @@ class SeasonListViewController: UIViewController {
     
     // MARK: - Properties
     let model: [Season]
-    var delegate: SeasonListViewControllerDelegate?
+    weak var delegate: SeasonListViewControllerDelegate?
     
     // MARK: - Initialization
     init(model: [Season]) {
