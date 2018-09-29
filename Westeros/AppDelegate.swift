@@ -12,20 +12,20 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var seasonDetailNavigation: UINavigationController!
-    var houseDetailNavigation: UINavigationController!
+    var seasonDetailNC: UINavigationController!
+    var houseDetailNC: UINavigationController!
     let splitVC = UISplitViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        // Model
+        // Models
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
         //_ = Repository.local.episodes
         
-        // OLD INTERFACE
+        // NEW INTERFACE
         // Controllers
         // Master
         let houseListVC = HouseListTableViewController(model: houses)
@@ -35,27 +35,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seasonListViewController = SeasonListViewController(model: seasons)
         let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
         
-        houseListVC.delegate = houseDetailViewController
-        seasonListViewController.delegate = seasonDetailViewController
+        // delegates
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            houseListVC.delegated = houseDetailViewController
+            seasonListViewController.delegate = seasonDetailViewController
+        } else {
+            houseListVC.delegated = houseListVC as? HouseListTableViewControllerDelegate
+            seasonListViewController.delegate = seasonListViewController
+        }
         
-        var houseListNav: UINavigationController!
-        var seasonListNav: UINavigationController!
+        var houseListNC: UINavigationController!
+        var seasonListNC: UINavigationController!
         
-        houseListNav = houseListVC.wrappedInNavigation()
-        seasonListNav = seasonListViewController.wrappedInNavigation()
-        houseDetailNavigation = houseDetailViewController.wrappedInNavigation()
-        
-        seasonDetailNavigation = seasonDetailViewController.wrappedInNavigation()
+        // navigation controllers
+        houseListNC = houseListVC.wrappedInNavigation()
+        seasonListNC = seasonListViewController.wrappedInNavigation()
+        houseDetailNC = houseDetailViewController.wrappedInNavigation()
+        seasonDetailNC = seasonDetailViewController.wrappedInNavigation()
         
         // Extra
         //let houseCollectionVC = HouseCollectionViewController(model: houses)
         
-        //newHouseListViewController.delegate = self
+        // tabbar
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [houseListNav, seasonListNav]
+        tabBarController.viewControllers = [houseListNC, seasonListNC]
         tabBarController.delegate = self
         
-        splitVC.viewControllers = [tabBarController, houseDetailNavigation, seasonDetailNavigation]
+        splitVC.viewControllers = [tabBarController, houseDetailNC, seasonDetailNC]
         
         tabBarController.title = "Westeros"
         
@@ -76,14 +82,18 @@ extension AppDelegate: UITabBarControllerDelegate {
                 return
         }
         
-        let detailNav: UINavigationController
-        if type(of: viewController) == SeasonListViewController.self {
-            detailNav = seasonDetailNavigation
-        } else {
-            detailNav = houseDetailNavigation
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            // Change detailVC on iPad
+            let detailNav: UINavigationController
+            if type(of: viewController) == SeasonListViewController.self {
+                detailNav = seasonDetailNC
+            } else {
+                detailNav = houseDetailNC
+            }
+            
+            // set correct detailController
+            splitVC.showDetailViewController(detailNav, sender: nil)
         }
         
-        // set correct detailController
-        splitVC.showDetailViewController(detailNav, sender: nil)
     }
 }
