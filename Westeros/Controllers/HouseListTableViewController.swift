@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-protocol HouseListTableViewControllerDelegate {
+// class: guarantee that this protocol will be used only on classes and no other stuff like enums or structs.
+protocol HouseListTableViewControllerDelegate: class {
     
     func houseListTableViewController(_ vc: HouseListTableViewController, didSelectHouse house: House)
     
@@ -18,7 +18,7 @@ class HouseListTableViewController: UITableViewController {
     
     // MARK: - Properties
     let model: [House]
-    var delegate: HouseListTableViewControllerDelegate?
+    weak var delegated: HouseListTableViewControllerDelegate?
     
     // MARK: - Initialization
     init(model: [House]) {
@@ -84,7 +84,7 @@ class HouseListTableViewController: UITableViewController {
         let house = model[indexPath.row]
         
         // notify to delegate the change
-        delegate?.houseListTableViewController(self, didSelectHouse: house)
+        delegated?.houseListTableViewController(self, didSelectHouse: house)
         
         // Send notification
         let nc = NotificationCenter.default
@@ -99,6 +99,15 @@ class HouseListTableViewController: UITableViewController {
     }
     
 }
+
+// Mark: - HouseListTableViewControllerDelegate
+extension HouseListTableViewController: HouseListTableViewControllerDelegate {
+    func houseListTableViewController(_ vc: HouseListTableViewController, didSelectHouse house: House) {
+        let houseDetailViewController = HouseDetailViewController(model: house)
+        navigationController?.pushViewController(houseDetailViewController, animated: true)
+    }
+}
+
 
 // MARK: - Persistence (UserDefaults)
 extension HouseListTableViewController {
