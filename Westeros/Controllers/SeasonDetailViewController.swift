@@ -47,11 +47,9 @@ class SeasonDetailViewController: UIViewController {
         title = model.name
         nameLabel.text = model.name
         broadcastLabel.text = "\(model.releaseDate)"
-        episodesLabel.text = "Episodes List"
+        episodesLabel.text = "Select Episode"
     }
     
-    
-
 }
 
 extension SeasonDetailViewController: UITableViewDataSource {

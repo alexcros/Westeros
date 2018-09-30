@@ -60,11 +60,9 @@ class EpisodeDetailViewController: UIViewController {
     
     // MARK: - Syncro
     func syncModelWithView() {
-        
-        nameLabel.text = model.fullName
+        nameLabel.text = model.name
         broadcastLabel.text = "\(model.broadcastDate)"
         detailLabel.text = model.description
-        
     }
 
 }

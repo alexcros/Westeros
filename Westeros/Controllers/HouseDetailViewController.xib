@@ -23,20 +23,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-nG-V3S">
-                    <rect key="frame" x="16" y="33" width="343" height="27.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                    <rect key="frame" x="16" y="33" width="343" height="21.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qhy-LI-EL1">
-                    <rect key="frame" x="16" y="69" width="343" height="291"/>
+                    <rect key="frame" x="16" y="63" width="343" height="291"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="291" id="5Yb-24-ZPb"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dee-dE-By7">
-                    <rect key="frame" x="16" y="378" width="343" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <rect key="frame" x="16" y="359" width="343" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="tAW-8m-LFZ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -45,10 +48,12 @@
             <constraints>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="trailing" secondItem="dee-dE-By7" secondAttribute="trailing" id="0oU-bJ-2Ev"/>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="13" id="3dr-4B-MKx"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dee-dE-By7" secondAttribute="bottom" constant="259" id="5fC-JR-qIj"/>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="leading" secondItem="dee-dE-By7" secondAttribute="leading" id="9Mw-6T-tuS"/>
+                <constraint firstItem="dee-dE-By7" firstAttribute="trailing" secondItem="qhy-LI-EL1" secondAttribute="trailing" id="Bru-jF-5AT"/>
                 <constraint firstItem="qhy-LI-EL1" firstAttribute="top" secondItem="RZA-nG-V3S" secondAttribute="bottom" constant="8.5" id="NOJ-V5-9yu"/>
                 <constraint firstItem="qhy-LI-EL1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Qs2-hC-inq"/>
+                <constraint firstItem="dee-dE-By7" firstAttribute="top" secondItem="qhy-LI-EL1" secondAttribute="bottom" constant="5" id="RTj-Mx-8sz"/>
+                <constraint firstItem="dee-dE-By7" firstAttribute="top" secondItem="qhy-LI-EL1" secondAttribute="bottom" constant="5" id="kI5-LY-DbV"/>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="mkV-fc-saw"/>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="centerX" secondItem="qhy-LI-EL1" secondAttribute="centerX" id="qlf-9g-4bw"/>
                 <constraint firstItem="RZA-nG-V3S" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="yev-5x-REE"/>
