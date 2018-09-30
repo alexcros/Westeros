@@ -58,5 +58,6 @@ extension Episode: Comparable {
 extension Episode: CustomStringConvertible {
     var description: String {
         return "description: \(name)"
+        
     }
 }
