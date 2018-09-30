@@ -22,7 +22,7 @@ class HouseTests: XCTestCase {
     var tyrion: Person!
     
     var starkArray: [Person] = []
-    var starkSortedArray: [Person] = []
+    var starkUnsortedArray: [Person] = []
     
     override func setUp() {
             // Init properties
@@ -45,6 +45,8 @@ class HouseTests: XCTestCase {
         starkArray.append(aria!)
         starkArray.append(robb!)
         
+        starkUnsortedArray.append(robb!)
+        starkUnsortedArray.append(aria!)
     }
 
     // Finish execute
@@ -112,5 +114,7 @@ class HouseTests: XCTestCase {
     
     func testHouse_SortedMembers_ReturnsSortedArray() {
         XCTAssertEqual(starkArray, starkArray.sorted())
+        
+        XCTAssertNotEqual(starkArray, starkUnsortedArray)
     }
 }
