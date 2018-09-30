@@ -21,6 +21,9 @@ class HouseTests: XCTestCase {
     var aria: Person!
     var tyrion: Person!
     
+    var starkArray: [Person] = []
+    var starkSortedArray: [Person] = []
+    
     override func setUp() {
             // Init properties
 //        starkHouse = Repository.local.house(named: "Stark") // NO
@@ -38,6 +41,10 @@ class HouseTests: XCTestCase {
         aria = Person(name: "Aria", house: starkHouse)
         
         tyrion = Person(name: "Tyrion", alias: "El joven Lobo", house: lannisterHouse)
+        
+        starkArray.append(aria!)
+        starkArray.append(robb!)
+        
     }
 
     // Finish execute
@@ -103,11 +110,7 @@ class HouseTests: XCTestCase {
         XCTAssertLessThan(lannisterHouse, starkHouse)
     }
     
-    func testHouseSortedMembersReturnsASortedArray() {
-        
+    func testHouse_SortedMembers_ReturnsSortedArray() {
+        XCTAssertEqual(starkArray, starkArray.sorted())
     }
-    
-    // TEST QUE COMPRUEBA QUE ESTOS MIEMBROS VIENEN ORDENADOS
-    
-    
 }
