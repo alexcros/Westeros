@@ -13,8 +13,8 @@ class SeasonDetailViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var broadcastLabel: UILabel!
-    @IBOutlet weak var episodesLabel: UILabel!
     @IBOutlet var episodesTableView: UITableView!
+    @IBOutlet var button: UIButton!
     
     // MARK: - Properties
     var model: Season
@@ -47,12 +47,22 @@ class SeasonDetailViewController: UIViewController {
         title = model.name
         nameLabel.text = model.name
         broadcastLabel.text = "\(model.releaseDate)"
-        episodesLabel.text = "Select Episode"
+    }
+    
+    // MARK: - IBActions
+    @IBAction func episodesListButton(_ sender: UIButton) {
+        let episodeListViewController = EpisodeListViewController(model: model.sortedEpisodes)
+        navigationController?.pushViewController(episodeListViewController, animated: true)
     }
     
 }
 
+// MARK: - UITableViewDataSource
 extension SeasonDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Episodes"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.sortedEpisodes.count
@@ -75,8 +85,10 @@ extension SeasonDetailViewController: UITableViewDataSource {
         
         return cell!
     }
+    
 }
 
+// MARK: - UITableViewDelegate
 extension SeasonDetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

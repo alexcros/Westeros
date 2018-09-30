@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SeasonDetailViewController" customModule="Westeros" customModuleProvider="target">
             <connections>
                 <outlet property="broadcastLabel" destination="Ex4-Cv-R6W" id="2cF-aT-CmI"/>
-                <outlet property="episodesLabel" destination="cLq-fT-GYP" id="Haf-US-6V7"/>
+                <outlet property="button" destination="Mh3-11-Qqm" id="Lk5-6c-tid"/>
                 <outlet property="episodesTableView" destination="KUI-0p-ut9" id="SaR-Em-ehf"/>
                 <outlet property="nameLabel" destination="Uag-mB-Yk9" id="yPb-Ob-ylo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -45,27 +45,28 @@
                     <rect key="frame" x="0.0" y="173" width="375" height="494"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLq-fT-GYP">
-                    <rect key="frame" x="16" y="97" width="343" height="23"/>
-                    <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh3-11-Qqm">
+                    <rect key="frame" x="16" y="78" width="145" height="30"/>
+                    <state key="normal" title="See Episodes List"/>
+                    <connections>
+                        <action selector="episodesListButton:" destination="-1" eventType="touchUpInside" id="e4z-Qy-TM9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Ex4-Cv-R6W" firstAttribute="leading" secondItem="cLq-fT-GYP" secondAttribute="leading" id="5vf-NF-8QA"/>
                 <constraint firstItem="Uag-mB-Yk9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="C3N-vi-dKx"/>
                 <constraint firstItem="Ex4-Cv-R6W" firstAttribute="top" secondItem="Uag-mB-Yk9" secondAttribute="bottom" constant="8" symbolic="YES" id="GfJ-Rk-hHp"/>
                 <constraint firstItem="Uag-mB-Yk9" firstAttribute="trailing" secondItem="Ex4-Cv-R6W" secondAttribute="trailing" id="Hbt-RM-3bq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mh3-11-Qqm" secondAttribute="trailing" constant="214" id="Kam-lE-6oj"/>
                 <constraint firstItem="Uag-mB-Yk9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="Kwd-JZ-tG7"/>
-                <constraint firstItem="cLq-fT-GYP" firstAttribute="top" secondItem="Ex4-Cv-R6W" secondAttribute="bottom" constant="27" id="Sda-dd-p8x"/>
                 <constraint firstItem="KUI-0p-ut9" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="86.5" id="WGH-bz-htP"/>
                 <constraint firstItem="Uag-mB-Yk9" firstAttribute="leading" secondItem="Ex4-Cv-R6W" secondAttribute="leading" id="YY8-Hn-XaZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KUI-0p-ut9" secondAttribute="bottom" id="dmY-zy-yMy"/>
-                <constraint firstItem="KUI-0p-ut9" firstAttribute="centerX" secondItem="cLq-fT-GYP" secondAttribute="centerX" id="npI-YW-3jC"/>
+                <constraint firstItem="Mh3-11-Qqm" firstAttribute="leading" secondItem="Ex4-Cv-R6W" secondAttribute="leading" id="fu9-c9-cEv"/>
                 <constraint firstItem="KUI-0p-ut9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ptM-Ev-oL5"/>
-                <constraint firstItem="Ex4-Cv-R6W" firstAttribute="trailing" secondItem="cLq-fT-GYP" secondAttribute="trailing" id="y3n-4G-JdW"/>
+                <constraint firstItem="Mh3-11-Qqm" firstAttribute="top" secondItem="Ex4-Cv-R6W" secondAttribute="bottom" constant="8" symbolic="YES" id="qQ9-uj-Wcp"/>
+                <constraint firstItem="KUI-0p-ut9" firstAttribute="centerX" secondItem="Ex4-Cv-R6W" secondAttribute="centerX" id="tUm-Qc-gAv"/>
                 <constraint firstItem="Uag-mB-Yk9" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="y3s-Tx-DVM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
