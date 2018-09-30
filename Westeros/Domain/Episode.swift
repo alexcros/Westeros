@@ -22,7 +22,7 @@ final class Episode {
 
 extension Episode {
     var fullName: String {
-        return "\(name) from \(season!.name)"
+        return "\(name) from \(season?.name)"
     }
 }
 

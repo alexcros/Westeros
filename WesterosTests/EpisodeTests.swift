@@ -47,7 +47,7 @@ class EpisodeTests: XCTestCase {
     }
     
     func testEpisodeCustomStringConvertible() {
-        XCTAssertEqual(episode.description, "(name: \(episode.name)")
+        XCTAssertEqual(episode.description, "description: Episode 1")
     }
 
 }
