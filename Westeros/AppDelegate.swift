@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Models
         let houses = Repository.local.houses
         let seasons = Repository.local.seasons
-        //_ = Repository.local.episodes
+        _ = Repository.local.episodes
         
         // NEW INTERFACE
         // Controllers
@@ -36,11 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seasonDetailViewController = SeasonDetailViewController(model: seasons.first!)
         
         // delegates
-        if UIDevice.current.userInterfaceIdiom == .pad {
+        if UIDevice.current.userInterfaceIdiom == .pad ||
+            UIScreen.main.nativeBounds.height == 2208 { // iPhone 6+/6S+/7+/8+
             houseListVC.delegated = houseDetailViewController
             seasonListViewController.delegate = seasonDetailViewController
         } else {
-            houseListVC.delegated = houseListVC as? HouseListTableViewControllerDelegate
+            houseListVC.delegated = houseListVC
             seasonListViewController.delegate = seasonListViewController
         }
         
@@ -82,8 +83,9 @@ extension AppDelegate: UITabBarControllerDelegate {
                 return
         }
         
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            // Change detailVC on iPad
+        if UIDevice.current.userInterfaceIdiom == .pad ||
+            UIScreen.main.nativeBounds.height == 2208 { // iPhone 6+/6S+/7+/8+ {
+            
             let detailNav: UINavigationController
             if type(of: viewController) == SeasonListViewController.self {
                 detailNav = seasonDetailNC
@@ -94,6 +96,5 @@ extension AppDelegate: UITabBarControllerDelegate {
             // set correct detailController
             splitVC.showDetailViewController(detailNav, sender: nil)
         }
-        
     }
 }
