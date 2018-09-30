@@ -62,7 +62,7 @@ class EpisodeDetailViewController: UIViewController {
     func syncModelWithView() {
         nameLabel.text = model.name
         broadcastLabel.text = "\(model.broadcastDate)"
-        detailLabel.text = model.description
+        detailLabel.text = ("\(model.name) \(model.season!.name)")
     }
 
 }

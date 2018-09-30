@@ -22,7 +22,7 @@ final class Episode {
 
 extension Episode {
     var fullName: String {
-        return "\(name) from \(season?.name)"
+        return "\(name) from \(String(describing: season?.name))"
     }
 }
 
@@ -58,5 +58,6 @@ extension Episode: Comparable {
 extension Episode: CustomStringConvertible {
     var description: String {
         return "description: \(name)"
+        
     }
 }
